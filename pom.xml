@@ -85,42 +85,42 @@
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>portal-client</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>portal-impl</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>portal-pacl</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>portal-service</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>util-bridges</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>util-taglib</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>util-java</artifactId>
-            <version>6.2.0-ga1</version>
+            <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
         

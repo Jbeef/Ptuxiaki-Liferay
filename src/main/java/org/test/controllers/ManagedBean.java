@@ -5,6 +5,7 @@ import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 /**
  *
@@ -13,6 +14,9 @@ import javax.faces.context.FacesContext;
 @Named(value = "managedBean")
 @RequestScoped
 public class ManagedBean {
+
+    @Inject
+    FacesContext context;
 
     private String name;
 
@@ -26,7 +30,7 @@ public class ManagedBean {
 
     public void submit() {
         System.out.println("##  Name: " + name);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Warning!", "The entry saved. " + name));
+        context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Warning!", "The entry saved. " + name));
     }
 
     public String getName() {
