@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"    
+    xmlns:portlet="http://java.sun.com/portlet_2_0"
+    xmlns:portal="http://liferay.com/faces/portal"
+    xmlns:alloy="http://liferay.com/faces/alloy"    
+    xmlns:bridge="http://liferay.com/faces/bridge"
+    >    
+    <h:head>
+        <title>User Page</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>        
+        <link rel="stylesheet" href="/css/main.css"></link>        
+    </h:head>
+    <h:body style="padding:20px"> 
+        <div class="container-fluid col-md-12">                  
+
+            <p:messages id="msg" closable="true" showDetail="true" />            
+            <p:growl id="growl" showDetail="true" />       
+
+            <div class="col-md-8">
+                <h:form id="userform">                               
+                    <div class="form-group">
+                        <p:outputLabel value="Name" for="name"/>
+                        <p:inputText id="name" placeholder="Name" value="#{managedBean.name}"/>
+                    </div>
+                    <p:commandButton value="Submit" action="#{managedBean.submit()}" update=":msg :growl"/>
+                </h:form>
+            </div>                        
+        </div>        
+    </h:body>
+</f:view>
