@@ -13,27 +13,30 @@
     xmlns:bridge="http://liferay.com/faces/bridge"
     >    
     <h:head>        
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>        
-        <link rel="stylesheet" href="/css/main.css"></link>        
+                                
     </h:head>
     <h:body style="padding:20px"> 
-        <div class="container-fluid col-md-12">                  
+        <div class="container">                  
 
             <p:messages id="msg" closable="true" showDetail="true" />            
             <p:growl id="growl" showDetail="true" />       
 
-            <div class="col-md-6">
+            <div>
+                <p:outputPanel styleClass="uploadpanel">
+                    Upload Lisp file to your personal folder:
+                </p:outputPanel>
                 <h:form id="uploadform">                               
-                    <p:fileUpload value="#{managedBean.file}" 
+                    <p:fileUpload value="#{uploadBean.file}" 
                                   immediate="true" 
-                                  fileUploadListener="#{managedBean.handleFileUpload}" 
-                                  update=":growl"                                                     
+                                  fileUploadListener="#{uploadBean.handleFileUpload}" 
+                                  update=":growl :msg"                                                     
                                   mode="advanced" dragDropSupport="false" 
-                                  multiple="false" fileLimit="1"
-                                  allowTypes="/(\.|\/)(gif|jpe?g|png|bmp)$/"                                           
-                                  sizeLimit="500000"
-                                  fileLimitMessage="Too large for lisp file. Get a life!">                                
-                    </p:fileUpload>
+                                  multiple="false" 
+                                  fileLimit="1"
+                                  allowTypes="/(\.|\/)(gif|jpe?g|png|bmp)$/"                                            
+                                  sizeLimit="100000"
+                                  fileLimitMessage="Too large for lisp file. Get a life man!">                                
+                    </p:fileUpload>                    
                 </h:form>
             </div>                        
         </div>        
