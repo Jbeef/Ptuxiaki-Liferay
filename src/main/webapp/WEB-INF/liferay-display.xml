@@ -4,5 +4,6 @@
 <display>
     <category name="category.sample">
         <portlet id="LiferayJSF" />
+        <portlet id="FileExecution" />
     </category>
 </display>

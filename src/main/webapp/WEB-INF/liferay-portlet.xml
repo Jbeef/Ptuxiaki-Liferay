@@ -9,6 +9,16 @@
         <ajaxable>false</ajaxable>
         <header-portlet-css>/css/upload.css</header-portlet-css>
     </portlet>
+    
+    <portlet>
+        <portlet-name>FileExecution</portlet-name>
+        <icon>/icon.png</icon>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        <ajaxable>false</ajaxable>        
+        <header-portlet-css>https://github.com/liferay/alloy-bootstrap/blob/master/bootstrap-2.3.2.css</header-portlet-css>
+        <header-portlet-css>/css/upload.css</header-portlet-css>
+    </portlet>    
+    
     <role-mapper>
         <role-name>administrator</role-name>
         <role-link>Administrator</role-link>
