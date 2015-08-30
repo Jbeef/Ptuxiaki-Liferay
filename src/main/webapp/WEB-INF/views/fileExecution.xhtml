@@ -50,6 +50,7 @@
                                              immediate="true"
                                              update=":outputform"
                                              oncomplete="scrollToBottom()"
+                                             action="#{fileExecution.executeFile()}"
                                              >
                                 <f:setPropertyActionListener value="#{file}" target="#{fileExecution.selectedFile}"/>
                             </p:commandButton>

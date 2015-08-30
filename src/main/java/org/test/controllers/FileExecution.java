@@ -1,5 +1,6 @@
 package org.test.controllers;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
@@ -8,6 +9,11 @@ import com.liferay.portlet.documentlibrary.model.DLFileEntry;
 import com.liferay.portlet.documentlibrary.model.DLFolder;
 import com.liferay.portlet.documentlibrary.service.DLFileEntryLocalServiceUtil;
 import com.liferay.portlet.documentlibrary.service.DLFolderLocalServiceUtil;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.UniformInterfaceException;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -19,6 +25,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.portlet.PortletRequest;
+import org.lisp.service.client.JerseyClient;
 
 /**
  *
@@ -48,6 +55,21 @@ public class FileExecution implements Serializable {
         request = (PortletRequest) context.getExternalContext().getRequest();
         themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
         user = themeDisplay.getUser();
+    }
+
+    public void executeFile() throws UniformInterfaceException, IOException {
+        if (selectedFile != null) {
+            System.out.println("NOT NULL FILE");
+            JerseyClient client = new JerseyClient();
+            try {
+                ClientResponse response = client.executeFile(selectedFile.getContentStream());
+                System.out.println("Status response: " + response.getStatus());
+            } catch (PortalException | SystemException ex) {
+                System.out.println("#### ESKASE");
+                Logger.getLogger(FileExecution.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
     }
 
 //-------------------------------- Getters/Setters ---------------------------------------    

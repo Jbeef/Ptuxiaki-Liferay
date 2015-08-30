@@ -46,4 +46,10 @@
     padding: 10px 15px;
 }
 
+.ui-datatable-tablewrapper .ui-datatable-data .ui-widget-content {
+    height: 50px;
+}
 
+.ui-datatable-tablewrapper .ui-datatable-data .ui-datatable-odd {
+    background: powderblue;
+}
